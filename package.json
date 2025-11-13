@@ -723,6 +723,7 @@
   "dependencies": {
     "adal-node": "^0.2.4",
     "applicationinsights": "^1.0.5",
+    "amazon-cognito-identity-js": "^6.3.12",
     "aws-amplify": "^5.0.3",
     "aws4": "^1.9.1",
     "code-highlight-linenums": "^0.2.1",

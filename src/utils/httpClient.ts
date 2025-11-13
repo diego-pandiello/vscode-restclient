@@ -9,6 +9,7 @@ import { IRestClientSettings, SystemSettings } from '../models/configurationSett
 import { HttpRequest } from '../models/httpRequest';
 import { HttpResponse } from '../models/httpResponse';
 import { awsCognito } from './auth/awsCognito';
+import { awsCognitoSrp } from './auth/awsCognitoSrp';
 import { awsSignature } from './auth/awsSignature';
 import { digest } from './auth/digest';
 import { MimeUtility } from './mimeUtility';
@@ -169,7 +170,10 @@ export class HttpClient {
                     options.hooks!.beforeRequest!.push(awsSignature(authorization));
                 } else if (normalizedScheme === 'cognito') {
                     removeHeader(options.headers!, 'Authorization');
-                   options.hooks!.beforeRequest!.push(await awsCognito(authorization));
+                    options.hooks!.beforeRequest!.push(await awsCognito(authorization));
+                } else if (normalizedScheme === 'cognito_srp') {
+                    removeHeader(options.headers!, 'Authorization');
+                    options.hooks!.beforeRequest!.push(await awsCognitoSrp(authorization));
                 }
             } else if (normalizedScheme === 'basic' && user.includes(':')) {
                 removeHeader(options.headers!, 'Authorization');
