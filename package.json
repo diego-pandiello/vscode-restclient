@@ -2,7 +2,7 @@
   "name": "aws-srp-rest-client",
   "displayName": "AWS SRP REST Client",
   "description": "REST Client for Visual Studio Code",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "diegopandiello",
   "author": {
     "name": "Diego Pandiello",
