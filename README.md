@@ -24,6 +24,7 @@ REST Client allows you to send HTTP request and view the response in Visual Stud
     - Microsoft Identity Platform
     - AWS Signature v4
     - AWS Cognito
+    - AWS Cognito SRP (Secure Remote Password)
 * Environments and custom/system variables support
     - Use variables in any place of request(_URL_, _Headers_, _Body_)
     - Support __environment__, __file__, __request__ and __prompt__ custom variables
@@ -394,6 +395,41 @@ To authenticate via AWS Cognito, you need to set the Authorization header schema
 GET https://httpbin.org/aws-auth HTTP/1.1
 Authorization: COGNITO <Username> <Password> <Region> <UserPoolId> <ClientId>
 ```
+
+### AWS Cognito SRP (Secure Remote Password)
+To authenticate via AWS Cognito using the SRP authentication flow, you need to set the Authorization header schema to `cognito_srp` and provide your credentials separated by spaces. The SRP authentication flow is more secure than the basic auth flow as it uses the [Secure Remote Password protocol](https://docs.aws.amazon.com/cognito/latest/developerguide/amazon-cognito-user-pools-authentication-flow-methods.html#amazon-cognito-user-pools-authentication-flow-methods-srp) to authenticate users without sending passwords over the network.
+
+Parameters (in order):
+- `<environment>`: Environment name (use `local` to bypass authentication and use fallback tokens)
+- `<fallbackAccessToken>`: Fallback access token (used when environment is `local`)
+- `<fallbackIdToken>`: Fallback ID token (used when environment is `local`)
+- `<username>`: AWS Cognito username
+- `<password>`: AWS Cognito password
+- `<userPoolId>`: AWS Cognito User Pool ID
+- `<clientId>`: AWS Cognito Client ID
+
+```http
+GET https://api.example.com/protected-resource HTTP/1.1
+Authorization: awsCognitoSrp production fallbackAccessToken fallbackIdToken myusername mypassword us-east-1_abcd1234 5exampleclientid1234567890
+```
+
+The SRP authentication will:
+1. Perform the secure authentication flow with AWS Cognito
+2. Automatically set the `Authorization` header to `Bearer <accessToken>`
+3. Automatically set the `Identity` header to the ID token
+
+For local development, you can use the `local` environment to bypass authentication:
+```http
+GET https://api.example.com/protected-resource HTTP/1.1
+Authorization: awsCognitoSrp local myAccessToken myIdToken username password poolId clientId
+```
+
+**Error Handling:**
+The SRP authentication supports error handling for common scenarios:
+- New password required challenges
+- MFA verification requirements
+- Invalid credentials
+- Missing required parameters
 
 ## Generate Code Snippet
 ![Generate Code Snippet](https://raw.githubusercontent.com/Huachao/vscode-restclient/master/images/code-snippet.gif)
