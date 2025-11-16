@@ -13,7 +13,7 @@ export class HttpCodeLensProvider implements CodeLensProvider {
             const cmd: Command = {
                 arguments: [document, range],
                 title: 'Send Request',
-                command: 'aws-srp-rest-client.request'
+                command: 'rest-client.request'
             };
             blocks.push(new CodeLens(range, cmd));
         }

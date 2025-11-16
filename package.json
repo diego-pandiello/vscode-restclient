@@ -74,37 +74,37 @@
     ],
     "commands": [
       {
-        "command": "aws-srp-rest-client.request",
+        "command": "rest-client.request",
         "title": "Send Request",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.rerun-last-request",
+        "command": "rest-client.rerun-last-request",
         "title": "Rerun Last Request",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.cancel-request",
+        "command": "rest-client.cancel-request",
         "title": "Cancel Request",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.switch-environment",
+        "command": "rest-client.switch-environment",
         "title": "Switch Environment",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.history",
+        "command": "rest-client.history",
         "title": "View Request History",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.clear-history",
+        "command": "rest-client.clear-history",
         "title": "Clear Request History",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.save-response",
+        "command": "rest-client.save-response",
         "title": "Save Full Response",
         "icon": {
           "light": "./images/save.svg",
@@ -113,7 +113,7 @@
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.save-response-body",
+        "command": "rest-client.save-response-body",
         "title": "Save Response Body",
         "icon": {
           "light": "./images/save-body.svg",
@@ -122,7 +122,7 @@
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.copy-response-body",
+        "command": "rest-client.copy-response-body",
         "title": "Copy Response Body",
         "icon": {
           "light": "./images/copy.svg",
@@ -131,12 +131,12 @@
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.generate-codesnippet",
+        "command": "rest-client.generate-codesnippet",
         "title": "Generate Code Snippet",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.copy-codesnippet",
+        "command": "rest-client.copy-codesnippet",
         "title": "Copy Code Snippet",
         "icon": {
           "light": "./images/copy.svg",
@@ -145,42 +145,42 @@
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.copy-request-as-curl",
+        "command": "rest-client.copy-request-as-curl",
         "title": "Copy Request As cURL",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.clear-aad-token-cache",
+        "command": "rest-client.clear-aad-token-cache",
         "title": "Clear Azure AD Token Cache",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.clear-cookies",
+        "command": "rest-client.clear-cookies",
         "title": "Clear cookies",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.fold-response",
+        "command": "rest-client.fold-response",
         "title": "Fold Response",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.unfold-response",
+        "command": "rest-client.unfold-response",
         "title": "Unfold Response",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.preview-html-response-body",
+        "command": "rest-client.preview-html-response-body",
         "title": "HTML Preview",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.show-raw-response",
+        "command": "rest-client.show-raw-response",
         "title": "Raw",
         "category": "Rest Client"
       },
       {
-        "command": "aws-srp-rest-client.import-swagger",
+        "command": "rest-client.import-swagger",
         "title": "Import from file",
         "category": "Rest Client"
       }
@@ -188,93 +188,93 @@
     "menus": {
       "commandPalette": [
         {
-          "command": "aws-srp-rest-client.fold-response",
+          "command": "rest-client.fold-response",
           "when": "httpResponsePreviewFocus"
         },
         {
-          "command": "aws-srp-rest-client.unfold-response",
+          "command": "rest-client.unfold-response",
           "when": "httpResponsePreviewFocus"
         },
         {
-          "command": "aws-srp-rest-client.preview-html-response-body",
+          "command": "rest-client.preview-html-response-body",
           "when": "isHTMLResponse"
         },
         {
-          "command": "aws-srp-rest-client.show-raw-response",
+          "command": "rest-client.show-raw-response",
           "when": "isHTMLResponse"
         },
         {
-          "command": "aws-srp-rest-client.save-response",
+          "command": "rest-client.save-response",
           "when": "httpResponsePreviewFocus"
         },
         {
-          "command": "aws-srp-rest-client.save-response-body",
+          "command": "rest-client.save-response-body",
           "when": "httpResponsePreviewFocus"
         },
         {
-          "command": "aws-srp-rest-client.copy-response-body",
+          "command": "rest-client.copy-response-body",
           "when": "httpResponsePreviewFocus"
         },
         {
-          "command": "aws-srp-rest-client.copy-codesnippet",
+          "command": "rest-client.copy-codesnippet",
           "when": "codeSnippetPreviewFocus"
         }
       ],
       "editor/title": [
         {
           "when": "httpResponsePreviewFocus",
-          "command": "aws-srp-rest-client.save-response",
+          "command": "rest-client.save-response",
           "group": "navigation@1"
         },
         {
           "when": "httpResponsePreviewFocus",
-          "command": "aws-srp-rest-client.save-response-body",
+          "command": "rest-client.save-response-body",
           "group": "navigation@2"
         },
         {
           "when": "httpResponsePreviewFocus",
-          "command": "aws-srp-rest-client.copy-response-body",
+          "command": "rest-client.copy-response-body",
           "group": "navigation@3"
         },
         {
           "when": "httpResponsePreviewFocus",
-          "command": "aws-srp-rest-client.fold-response",
+          "command": "rest-client.fold-response",
           "group": "1_rest-client@1"
         },
         {
           "when": "httpResponsePreviewFocus",
-          "command": "aws-srp-rest-client.unfold-response",
+          "command": "rest-client.unfold-response",
           "group": "1_rest-client@2"
         },
         {
           "when": "isHTMLResponse",
-          "command": "aws-srp-rest-client.preview-html-response-body",
+          "command": "rest-client.preview-html-response-body",
           "group": "1_rest-client@3"
         },
         {
           "when": "isHTMLResponse",
-          "command": "aws-srp-rest-client.show-raw-response",
+          "command": "rest-client.show-raw-response",
           "group": "1_rest-client@4"
         },
         {
           "when": "codeSnippetPreviewFocus",
-          "command": "aws-srp-rest-client.copy-codesnippet",
+          "command": "rest-client.copy-codesnippet",
           "group": "navigation"
         }
       ],
       "editor/context": [
         {
-          "command": "aws-srp-rest-client.request",
+          "command": "rest-client.request",
           "when": "editorTextFocus && editorLangId == http",
           "group": "rest-client@1"
         },
         {
-          "command": "aws-srp-rest-client.generate-codesnippet",
+          "command": "rest-client.generate-codesnippet",
           "when": "editorTextFocus && editorLangId == http",
           "group": "rest-client@2"
         },
         {
-          "command": "aws-srp-rest-client.copy-request-as-curl",
+          "command": "rest-client.copy-request-as-curl",
           "when": "editorTextFocus && editorLangId == http",
           "group": "rest-client@3"
         }
@@ -282,65 +282,65 @@
     },
     "keybindings": [
       {
-        "command": "aws-srp-rest-client.request",
+        "command": "rest-client.request",
         "key": "ctrl+alt+r",
         "mac": "cmd+alt+r",
         "when": "editorTextFocus && editorLangId == 'http'"
       },
       {
-        "command": "aws-srp-rest-client.request",
+        "command": "rest-client.request",
         "key": "ctrl+alt+r",
         "mac": "cmd+alt+r",
         "when": "editorTextFocus && editorLangId == 'plaintext'"
       },
       {
-        "command": "aws-srp-rest-client.rerun-last-request",
+        "command": "rest-client.rerun-last-request",
         "key": "ctrl+alt+l",
         "mac": "cmd+alt+l",
         "when": "editorTextFocus && editorLangId == 'http'"
       },
       {
-        "command": "aws-srp-rest-client.rerun-last-request",
+        "command": "rest-client.rerun-last-request",
         "key": "ctrl+alt+l",
         "mac": "cmd+alt+l",
         "when": "editorTextFocus && editorLangId == 'plaintext'"
       },
       {
-        "command": "aws-srp-rest-client.rerun-last-request",
+        "command": "rest-client.rerun-last-request",
         "key": "ctrl+alt+l",
         "mac": "cmd+alt+l",
         "when": "httpResponsePreviewFocus"
       },
       {
-        "command": "aws-srp-rest-client.cancel-request",
+        "command": "rest-client.cancel-request",
         "key": "ctrl+alt+k",
         "mac": "cmd+alt+k",
         "when": "editorTextFocus && editorLangId == 'http'"
       },
       {
-        "command": "aws-srp-rest-client.cancel-request",
+        "command": "rest-client.cancel-request",
         "key": "ctrl+alt+k",
         "mac": "cmd+alt+k",
         "when": "editorTextFocus && editorLangId == 'plaintext'"
       },
       {
-        "command": "aws-srp-rest-client.history",
+        "command": "rest-client.history",
         "key": "ctrl+alt+h",
         "mac": "cmd+alt+h"
       },
       {
-        "command": "aws-srp-rest-client.switch-environment",
+        "command": "rest-client.switch-environment",
         "key": "ctrl+alt+e",
         "mac": "cmd+alt+e"
       },
       {
-        "command": "aws-srp-rest-client.generate-codesnippet",
+        "command": "rest-client.generate-codesnippet",
         "key": "ctrl+alt+c",
         "mac": "cmd+alt+c",
         "when": "editorTextFocus && editorLangId == 'http'"
       },
       {
-        "command": "aws-srp-rest-client.generate-codesnippet",
+        "command": "rest-client.generate-codesnippet",
         "key": "ctrl+alt+c",
         "mac": "cmd+alt+c",
         "when": "editorTextFocus && editorLangId == 'plaintext'"
@@ -350,13 +350,13 @@
       "type": "object",
       "title": "REST Client",
       "properties": {
-        "aws-srp-rest-client.followredirect": {
+        "rest-client.followredirect": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "description": "Follow HTTP 3xx responses as redirects."
         },
-        "aws-srp-rest-client.defaultHeaders": {
+        "rest-client.defaultHeaders": {
           "type": "object",
           "default": {
             "User-Agent": "vscode-restclient"
@@ -364,54 +364,54 @@
           "scope": "resource",
           "description": "If particular headers are omitted in request headers, these will be added as headers for each request."
         },
-        "aws-srp-rest-client.timeoutinmilliseconds": {
+        "rest-client.timeoutinmilliseconds": {
           "type": "integer",
           "default": 0,
           "scope": "resource",
           "description": "Timeout in milliseconds. 0 for infinity"
         },
-        "aws-srp-rest-client.showResponseInDifferentTab": {
+        "rest-client.showResponseInDifferentTab": {
           "type": "boolean",
           "default": false,
           "scope": "resource",
           "description": "Show response in different tab"
         },
-        "aws-srp-rest-client.requestNameAsResponseTabTitle": {
+        "rest-client.requestNameAsResponseTabTitle": {
           "type": "boolean",
           "default": false,
           "scope": "resource",
           "description": "Show request name as the response tab title"
         },
-        "aws-srp-rest-client.rememberCookiesForSubsequentRequests": {
+        "rest-client.rememberCookiesForSubsequentRequests": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "description": "Remember cookies for subsequent requests"
         },
-        "aws-srp-rest-client.enableTelemetry": {
+        "rest-client.enableTelemetry": {
           "type": "boolean",
           "default": false,
           "scope": "resource",
           "description": "Send out anonymous usage data"
         },
-        "aws-srp-rest-client.excludeHostsForProxy": {
+        "rest-client.excludeHostsForProxy": {
           "type": "array",
           "default": [],
           "scope": "resource",
           "description": "Excluded hosts when using using proxy settings"
         },
-        "aws-srp-rest-client.fontSize": {
+        "rest-client.fontSize": {
           "type": "number",
           "scope": "resource",
           "markdownDescription": "Controls the font size in pixels used in the response preview. When set to `0`, the value of `#editor.fontSize#` is used."
         },
-        "aws-srp-rest-client.fontFamily": {
+        "rest-client.fontFamily": {
           "type": "string",
           "default": null,
           "scope": "resource",
           "description": "Controls the font family used in the response preview"
         },
-        "aws-srp-rest-client.fontWeight": {
+        "rest-client.fontWeight": {
           "type": "string",
           "enum": [
             "normal",
@@ -431,7 +431,7 @@
           "scope": "resource",
           "description": "Controls the font weight used in the response preview"
         },
-        "aws-srp-rest-client.environmentVariables": {
+        "rest-client.environmentVariables": {
           "type": "object",
           "default": {
             "$shared": {}
@@ -456,7 +456,7 @@
             ]
           }
         },
-        "aws-srp-rest-client.mimeAndFileExtensionMapping": {
+        "rest-client.mimeAndFileExtensionMapping": {
           "type": "object",
           "default": {},
           "scope": "resource",
@@ -469,19 +469,19 @@
           },
           "markdownDescription": "Sets the custom mapping of mime type and file extension of saved response body (e.g., `{\"application/atom+xml\": \"xml\"}`)"
         },
-        "aws-srp-rest-client.previewResponseInUntitledDocument": {
+        "rest-client.previewResponseInUntitledDocument": {
           "type": "boolean",
           "default": false,
           "scope": "resource",
           "description": "Preview response in untitled document if set to true, otherwise displayed in html view"
         },
-        "aws-srp-rest-client.oidcScopes": {
+        "rest-client.oidcScopes": {
           "type": "array",
           "default": [],
           "scope": "resource",
           "description": "Scopes to be used by the OIDC client, default: [openid profile email]"
         },
-        "aws-srp-rest-client.oidcCertificates": {
+        "rest-client.oidcCertificates": {
           "type": "object",
           "default": {},
           "scope": "resource",
@@ -523,7 +523,7 @@
             ]
           }
         },
-        "aws-srp-rest-client.certificates": {
+        "rest-client.certificates": {
           "type": "object",
           "default": {},
           "scope": "resource",
@@ -565,13 +565,13 @@
             ]
           }
         },
-        "aws-srp-rest-client.suppressResponseBodyContentTypeValidationWarning": {
+        "rest-client.suppressResponseBodyContentTypeValidationWarning": {
           "type": "boolean",
           "default": false,
           "scope": "resource",
           "description": "Suppress response body content type validation"
         },
-        "aws-srp-rest-client.previewOption": {
+        "rest-client.previewOption": {
           "type": "string",
           "enum": [
             "full",
@@ -589,19 +589,19 @@
           "scope": "resource",
           "description": "Response preview output option"
         },
-        "aws-srp-rest-client.disableHighlightResponseBodyForLargeResponse": {
+        "rest-client.disableHighlightResponseBodyForLargeResponse": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "markdownDescription": "Controls whether to highlight response body for response whose size is larger than limit specified by `rest-client.largeResponseSizeLimitInMB`"
         },
-        "aws-srp-rest-client.disableAddingHrefLinkForLargeResponse": {
+        "rest-client.disableAddingHrefLinkForLargeResponse": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "markdownDescription": "Controls whether to add href link in previewed response for response whose size is larger than limit specified by `rest-client.largeResponseSizeLimitInMB`"
         },
-        "aws-srp-rest-client.largeResponseBodySizeLimitInMB": {
+        "rest-client.largeResponseBodySizeLimitInMB": {
           "type": "number",
           "default": 5,
           "minimum": 0,
@@ -609,7 +609,7 @@
           "scope": "resource",
           "markdownDescription": "Set the response body size threshold of MB to identify whether a response is a so-called 'large response', only used when `rest-client.disableHighlightResponseBodyForLargeResponse` and/or `rest-client.disableAddingHrefLinkForLargeResponse` is set to true"
         },
-        "aws-srp-rest-client.previewColumn": {
+        "rest-client.previewColumn": {
           "type": "string",
           "enum": [
             "current",
@@ -623,13 +623,13 @@
           "scope": "resource",
           "description": "Response preview column option"
         },
-        "aws-srp-rest-client.previewResponsePanelTakeFocus": {
+        "rest-client.previewResponsePanelTakeFocus": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "description": "Preview response panel will take focus after receiving response."
         },
-        "aws-srp-rest-client.formParamEncodingStrategy": {
+        "rest-client.formParamEncodingStrategy": {
           "type": "string",
           "enum": [
             "automatic",
@@ -645,19 +645,19 @@
           "scope": "resource",
           "markdownDescription": "Form param encoding strategy for request body of `x-www-form-urlencoded`."
         },
-        "aws-srp-rest-client.addRequestBodyLineIndentationAroundBrackets": {
+        "rest-client.addRequestBodyLineIndentationAroundBrackets": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "markdownDescription": "Add line indentation around brackets(`{}`, `<>`, `[]`) in request body when pressing enter."
         },
-        "aws-srp-rest-client.decodeEscapedUnicodeCharacters": {
+        "rest-client.decodeEscapedUnicodeCharacters": {
           "type": "boolean",
           "default": false,
           "scope": "resource",
           "description": "Decode escaped unicode characters in response body."
         },
-        "aws-srp-rest-client.logLevel": {
+        "rest-client.logLevel": {
           "type": "string",
           "enum": [
             "error",
@@ -669,19 +669,19 @@
           "scope": "resource",
           "description": "The verbosity of logging in the REST output panel"
         },
-        "aws-srp-rest-client.enableSendRequestCodeLens": {
+        "rest-client.enableSendRequestCodeLens": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "description": "Enable/disable sending request CodeLens in request file"
         },
-        "aws-srp-rest-client.enableCustomVariableReferencesCodeLens": {
+        "rest-client.enableCustomVariableReferencesCodeLens": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
           "description": "Enable/disable custom variable references CodeLens in request file"
         },
-        "aws-srp-rest-client.useContentDispositionFilename": {
+        "rest-client.useContentDispositionFilename": {
           "type": "boolean",
           "default": true,
           "scope": "resource",
