@@ -1,7 +1,7 @@
 import {
-  CognitoUserPool,
-  CognitoUser,
   AuthenticationDetails,
+  CognitoUser,
+  CognitoUserPool,
   CognitoUserSession,
 } from "amazon-cognito-identity-js";
 import type { BeforeRequestHook } from "got";
