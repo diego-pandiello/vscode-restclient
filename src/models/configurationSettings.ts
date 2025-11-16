@@ -255,12 +255,12 @@ export class SystemSettings implements IRestClientSettings {
 
     private initializeSettings() {
         const document = getCurrentTextDocument();
-        const restClientSettings = workspace.getConfiguration("rest-client", document?.uri);
+        const restClientSettings = workspace.getConfiguration("aws-srp-rest-client", document?.uri);
         this._followRedirect = restClientSettings.get<boolean>("followredirect", true);
         this._defaultHeaders = restClientSettings.get<RequestHeaders>("defaultHeaders",
-                                                                     {
-                                                                         "User-Agent": "vscode-restclient"
-                                                                     });
+            {
+                "User-Agent": "vscode-aws-srp-rest-client"
+            });
         this._showResponseInDifferentTab = restClientSettings.get<boolean>("showResponseInDifferentTab", false);
         this._requestNameAsResponseTabTitle = restClientSettings.get<boolean>("requestNameAsResponseTabTitle", false);
         this._rememberCookiesForSubsequentRequests = restClientSettings.get<boolean>("rememberCookiesForSubsequentRequests", true);

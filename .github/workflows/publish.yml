@@ -2,8 +2,10 @@ name: Publish Release
 
 on:
   push:
-    tags:
-      - 'v*'
+    branches:
+      - master
+    paths:
+      - 'package.json'
 
 jobs:
   publish:
@@ -12,22 +14,45 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+
+    - name: Check if version changed
+      id: version_check
+      run: |
+        CURRENT_VERSION=$(jq -r '.version' package.json)
+        git checkout HEAD^
+        PREVIOUS_VERSION=$(jq -r '.version' package.json)
+        git checkout -
+
+        if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+          echo "Version changed from $PREVIOUS_VERSION to $CURRENT_VERSION"
+          echo "changed=true" >> $GITHUB_OUTPUT
+        else
+          echo "Version unchanged"
+          echo "changed=false" >> $GITHUB_OUTPUT
+        fi
 
     - name: Use Node.js
+      if: steps.version_check.outputs.changed == 'true'
       uses: actions/setup-node@v4
       with:
         node-version: 24
 
     - name: Install dependencies
+      if: steps.version_check.outputs.changed == 'true'
       run: npm install
 
     - name: Build extension
+      if: steps.version_check.outputs.changed == 'true'
       run: npm run vscode:prepublish
 
     - name: Install vsce
+      if: steps.version_check.outputs.changed == 'true'
       run: npm install -g @vscode/vsce
 
     - name: Publish to VS Code Marketplace
+      if: steps.version_check.outputs.changed == 'true'
       run: vsce publish -p ${{ secrets.VSCE_TOKEN }}
       env:
         VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
